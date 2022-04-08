@@ -1,0 +1,2 @@
+MODEL:
+    MODEL_PATH: 'automl_model.pkl'
