@@ -16,17 +16,10 @@ CMD ["uvicorn","api:app","--host=0.0.0.0","--reload"]
 #RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 #RUN apt-get -y install curl
 #RUN apt-get install libgomp1
-## copy the local requirements.txt file to the
-## /app/requirements.txt in the container
-## (the /app dir will be created)
 #COPY ./requirements.txt /app/requirements.txt
 #RUN pip install --upgrade pip setuptools wheel
-## install the packages from the requirements.txt file in the container
 #RUN pip install -r /app/requirements.txt
-## expose the port that uvicorn will run the app
-##EXPOSE 8000:8000
-## copy the local app/ folder to the /app fodler in the container
+#EXPOSE 8000
 #COPY ./ /app
-## set the working directory in the container to be the /app
 #WORKDIR /app
 #CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "80"]
