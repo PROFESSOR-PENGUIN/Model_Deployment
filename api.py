@@ -48,8 +48,8 @@ async def predict(data: RequestBody):
     return {'class_probs': str(class_probs)}
 
 
-# if __name__=="__main__":
-#     uvicorn.run("api:app",host='0.0.0.0', port=8001)
+if __name__=="__main__":
+    uvicorn.run("api:app",host='0.0.0.0', port=8001)
 
 
 # if __name__ == "__main__":
